@@ -9,7 +9,7 @@ The SPX-16298 from SparkFun was used to test this library, but it should work wi
 
 ## 🔧 Dependencies and Installation 
 * Python == 3.9.2
-* pigpiod == 1.78.0
+* pigpio == 1.78.0
 
 ## 🚀 Code
 The project was tested in a Raspberry Pi 4, using the I2C communication protocol.
