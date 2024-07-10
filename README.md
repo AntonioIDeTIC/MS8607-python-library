@@ -14,7 +14,7 @@ The SPX-16298 from SparkFun was used to test this library, but it should work wi
 ## 🚀 Code
 The project was tested in a Raspberry Pi 4, using the I2C communication protocol.
 
-In the code folder, you can find the necessary code to run the test script called "test_spx.py". Note that the necessary variables are imported from another script called "SPX16298_regs.py".
+In the code folder, you can find the necessary code to run the test script called "test_spx.py". Note that the required variables are imported from another file called "SPX16298_regs.py".
 
 ## 📜 License
 This project is released under the MIT 2.0 license.
