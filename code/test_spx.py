@@ -18,28 +18,29 @@ base_pressure = PT_Sensor.getPressure() / 100
 starttime = time.time()
 np.set_printoptions(formatter={'float': '{: 0.3f}'.format})
 
-while True:
-    currtime = time.time()
-    try:
-        temperature = PT_Sensor.getTemperature()
-        pressure = PT_Sensor.getPressure()
-        temperature, pressure = PT_Sensor.secondOrderCorrection()
-        seaLevel_pressure = PT_Sensor.adjustToSeaLevel() / 100
-        temperature, pressure = temperature / 100, pressure / 100
-
-        RH = H_Sensor.getHumidity()
-        RH_compensated = H_Sensor.getCompensatedHumidity(temperature)
-
-        if currtime - starttime >= 0.5:
-            print("Temperature: {:0.2f} ºC ".format(temperature))
-            print("Presure: {:0.2f} mbar ".format(pressure))
-            print("Sea Level Presure: {:0.2f} mbar ".format(seaLevel_pressure))
-            print("Humidity: {:0.2f} % ".format(RH_compensated))
-            print("\n")
-
-            starttime = currtime
-    except KeyboardInterrupt:
-        break
-
-PT_Sensor.stop()
-H_Sensor.stop()
+if __name__ == "__main__":
+  while True:
+      currtime = time.time()
+      try:
+          temperature = PT_Sensor.getTemperature()
+          pressure = PT_Sensor.getPressure()
+          temperature, pressure = PT_Sensor.secondOrderCorrection()
+          seaLevel_pressure = PT_Sensor.adjustToSeaLevel() / 100
+          temperature, pressure = temperature / 100, pressure / 100
+  
+          RH = H_Sensor.getHumidity()
+          RH_compensated = H_Sensor.getCompensatedHumidity(temperature)
+  
+          if currtime - starttime >= 0.5:
+              print("Temperature: {:0.2f} ºC ".format(temperature))
+              print("Presure: {:0.2f} mbar ".format(pressure))
+              print("Sea Level Presure: {:0.2f} mbar ".format(seaLevel_pressure))
+              print("Humidity: {:0.2f} % ".format(RH_compensated))
+              print("\n")
+  
+              starttime = currtime
+      except KeyboardInterrupt:
+          break
+  
+  PT_Sensor.stop()
+  H_Sensor.stop()
