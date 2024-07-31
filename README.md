@@ -1,5 +1,5 @@
 # MS8607-python-library
-This is a Python library that tries to interface with the MS8607 sensor. 
+This is a Python library that attempts to interface with the MS8607 sensor. Sparkfun's original [Arduino library](https://github.com/sparkfun/SparkFun_PHT_MS8607_Arduino_Library) was used as the basis for this project.
 
 ## 💻 Materials
 The SPX-16298 from SparkFun was used to test this library, but it should work with other boards. It could be purchased at [Mouser](https://www.mouser.es/ProductDetail/SparkFun/SPX-16298?qs=OlC7AqGiEDn97Tym7U9c%2FA%3D%3D).
